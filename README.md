@@ -1,1 +1,1 @@
-# README du site de concours de dessin
+# Description of how to use the website

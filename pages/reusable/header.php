@@ -4,14 +4,14 @@
 <body>
     <link rel="stylesheet" type="text/css" href="style.css">
     
-    <picture class="banderole">
-		<img src="../../front_ressources/images/" alt="banderole">
+    <picture class="banner">
+		<img src="../../front_ressources/images/" alt="banner">
 	</picture>
 
 	<header>
-		<nav class="barreNav">
-			<div class="NomPage">
-				<a href="accueil.php">Accueil</a>
+		<nav class="navBar">
+			<div class="">
+				<a href="home_page.php">Accueil</a>
 			</div>
 		</nav>
 		
