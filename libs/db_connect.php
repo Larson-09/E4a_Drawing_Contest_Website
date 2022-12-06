@@ -1,7 +1,7 @@
+
 <?php 
     function db_connect(){
-        """ Returns a object able to interact with the database
-        """
+        // Returns a object able to interact with the database
 
         require('../config/config.php');
 

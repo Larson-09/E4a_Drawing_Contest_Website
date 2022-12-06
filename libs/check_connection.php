@@ -11,8 +11,8 @@
 		
 	<?php
         if ($_POST['login'] != $_SESSION['login'] || $_POST['password'] != $_SESSION['password']) {
-            echo "<p>Identifiant ou mot de passe incorrect, essayez encore</p>";
-            echo "<a href=\"index.php\"><button>Réessayer</button>";
+            header('Location: ../pages/index.php');
+            exit();
         }
         
         else {
@@ -22,10 +22,9 @@
             # Redirect to home page
             
             echo "<div class = confirmation>";
-                    echo"<br/><br/><br/>";
-                    echo "<p>Connexion établie</p>";
-                    echo "<p><a href=\"accueil.php\"><button>Accéder au site</button></p>";
-                echo "</div>";
+            //header('Location: ../pages/home_page.php');
+            header('Location: https://www.youtube.com/watch?v=mAjAdYWClaI&ab_channel=LibertyFP');
+            exit();
         }
     ?>
 </body>

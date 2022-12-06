@@ -1,4 +1,5 @@
-<?php require('/reusable/header.php'); ?>
+<!DOCTYPE HTML>
+<html>
 
 <?php
     //Start session
@@ -9,8 +10,7 @@
     $_SESSION['password'] = 'userpass';
 ?>
 
-<!DOCTYPE HTML>
-<html>
+
 <head>
     <title>Connexion</title>
 </head>
