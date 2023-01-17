@@ -1,6 +1,6 @@
 SELECT
     U.nom,
-    U.dateNaissance,
+    DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(),U.dateNaissance)), '%Y') + 0 AS age,
     U.adresse,
     Con.dateDebut,
     Con.dateFin,
