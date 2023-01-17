@@ -1,12 +1,35 @@
 SELECT
-    e.note,
-    e.dateEvaluation,
-    d.idDessin,
-    d.idCompetiteur,
-    c.theme
-    c.dateDebut
+    D.idDessin,
+    E.note,
+    U.nom,
+    Con.descriptionConcours,
+    Con.theme
 FROM
-    Dessin d,
-    Concours c,
-    Evaluation e
-WHERE e.dateDebut BETWEEN 2021-01-01 AND 2021-12-31
+    Utilisateur U,
+    Evaluation E,
+    Concours Con,
+    Dessin D
+WHERE
+    (
+    SELECT
+        C.idCompetiteur
+    FROM
+        Competiteur C
+    WHERE
+        U.idUtilisateur = C.idCompetiteur AND(
+        SELECT
+            D.idCompetiteur
+        FROM
+            Dessin D
+        WHERE
+            C.idCompetiteur = D.idCompetiteur AND(
+            SELECT
+                Conc.idConcours
+            FROM
+                Concours Conc
+            WHERE
+                D.idConcours = Conc.idConcours AND YEAR(Conc.dateDebut) = 2021
+        )
+    )
+)
+ORDER BY E.note;
