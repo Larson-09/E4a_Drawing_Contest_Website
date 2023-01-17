@@ -30,7 +30,7 @@ WHERE
             FROM
                 Concours Conc
             WHERE
-                D.idConcours = Conc.idConcours AND YEAR(Conc.dateFin) = 2021
+                D.idConcours = Conc.idConcours AND YEAR(Conc.dateDebut) = 2021
         )
     ) AND(
     SELECT
