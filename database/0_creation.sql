@@ -1,9 +1,10 @@
-﻿drop table if exists President;
-drop table if exists Administrateur;
+﻿drop table if exists Participer;
+drop table if exists Juger;
 drop table if exists Directeur;
 drop table if exists Evaluation;
 drop table if exists Dessin;
 drop table if exists Concours;
+drop table if exists Administrateur;
 drop table if exists Competiteur;
 drop table if exists Evaluateur;
 drop table if exists Utilisateur;
@@ -48,6 +49,7 @@ FOREIGN KEY (idAdministrateur) REFERENCES Utilisateur (idUtilisateur)
 Create Table Directeur
 (
 idDirecteur   smallint NOT NULL,
+dateDebut     DATETIME NOT NULL,
 FOREIGN KEY (idDirecteur) REFERENCES Utilisateur (idUtilisateur)   
 );
 
@@ -85,7 +87,7 @@ Create Table Dessin
 (    
 idDessin  		    smallint NOT NULL AUTO_INCREMENT,
 dateRemise     	    dateTime NOT NULL,
-cheminDessin  		char NOT NULL,
+cheminDessin  		VARCHAR(150) NOT NULL,
 commentaire         VARCHAR (150),
 
 idCompetiteur   smallint NOT NULL,
@@ -117,10 +119,10 @@ CREATE TABLE Participer
 (
     idConcours      SMALLINT NOT NULL,
     idCompetiteur   SMALLINT NOT NULL
-)
+);
 
 CREATE TABLE Juger
 (
     idConcours      SMALLINT NOT NULL,
     idEvaluateur    SMALLINT NOT NULL
-)
+);
