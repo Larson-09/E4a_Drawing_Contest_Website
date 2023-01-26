@@ -20,11 +20,9 @@
             $_SESSION['current_password'] = $_POST['password'];
 
             # Redirect to home page
-            
-            echo "<div class = confirmation>";
-            //header('Location: ../pages/home_page.php');
-            header('Location: https://www.youtube.com/watch?v=mAjAdYWClaI&ab_channel=LibertyFP');
+            header('Location: ../pages/home_page.php');
             exit();
         }
     ?>
+
 </body>

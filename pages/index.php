@@ -6,8 +6,8 @@
     session_start();
     
     // Define connection credentials
-    $_SESSION['login'] = 'user';
-    $_SESSION['password'] = 'userpass';
+    $_SESSION['login'] = 'chucknorris';
+    $_SESSION['password'] = 'chuckpass';
 ?>
 
 
