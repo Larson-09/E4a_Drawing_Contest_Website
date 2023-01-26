@@ -1,10 +1,24 @@
-WITH liste_concours AS (
-    SELECT idConcours FROM Concours
-),
-participe_a_tous_concours as (
-    SELECT idCompetiteur FROM Dessin
-    WHERE idConcours IN (SELECT idConcours FROM liste_concours)
-    GROUP BY idCompetiteur
-    HAVING COUNT(DISTINCT idConcours) = (SELECT COUNT(*) FROM liste_concours)
+SELECT
+    u.idUtilisateur,
+    u.Nom,
+    u.Prenom
+FROM
+    Utilisateur u
+JOIN Competiteur c ON
+    u.idUtilisateur = c.idCompetiteur
+WHERE NOT
+    EXISTS(
+    SELECT
+        1
+    FROM
+        Concours co
+    WHERE NOT
+        EXISTS(
+        SELECT
+            1
+        FROM
+            Dessin d
+        WHERE
+            d.idCompetiteur = c.idCompetiteur AND d.idConcours = co.idConcours
+    )
 )
-SELECT idCompetiteur FROM participe_a_tous_concours;
