@@ -1,12 +1,23 @@
-SELECT(
-      SELECT COUNT(*)
-	  FROM   Dessin
-	  ) AS nombre_Dessins,
-      u.nom,
-      u.prenom
-FROM Dessin d
-JOIN Competiteur c ON
-	d.idCompetiteur = c.idCompetiteur
+SELECT
+    u.nom,
+    u.prenom,
+    cl.nom AS nom_club,
+    co.theme,
+    d.dateRemise,
+    e.note
+FROM
+    Dessin d
+JOIN Evaluation e ON
+    d.idDessin = e.idDessin
+JOIN Competiteur com ON
+    d.idCompetiteur = com.idCompetiteur
 JOIN Utilisateur u ON
-	c.idCompetiteur = u.idUtilisateur
-	
+    u.idUtilisateur = com.idCompetiteur
+JOIN Club cl ON
+    u.idclub = cl.idclub
+JOIN Concours co ON
+    d.idConcours = co.idConcours
+ORDER BY
+    e.note
+DESC
+    
