@@ -1,17 +1,16 @@
 SELECT DISTINCT
-    Conc.idConcours,
-    Conc.dateDebut,
-    Conc.descriptionConcours,
-    UC.nom as NomCompetiteur,
-    D.idDessin,
-    D.commentaire,
-    E.note,
-    E.commentaire,
-    UEE.nom as NomEvaluateur
+    Clu.nom,
+    COUNT(D.idDessin) as "Nombres de dessin"
 FROM
-	Club Clu,
-    Utilisateur U,
-    Competiteur C,
-    Concours Conc
+	Utilisateur U,
+	Competiteur C,
+    Club Clu,
+    Dessin D
+
 WHERE
-    
+    U.idClub = Clu.idClub AND
+    C.idCompetiteur = U.idUtilisateur AND
+    D.idCompetiteur = C.idCompetiteur
+
+GROUP BY Clu.idClub
+ORDER BY COUNT(D.idDessin) DESC;
