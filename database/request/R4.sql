@@ -1,27 +1,10 @@
-SELECT
-    u.Nom,
-    u.Prenom,
-    DATE_FORMAT(
-        FROM_DAYS(
-            DATEDIFF(NOW(), u.dateNaissance)),
-            '%Y'
-        ) + 0 AS age
-    FROM
-        Utilisateur u
-    WHERE NOT
-        EXISTS(
-        SELECT
-            1
-        FROM
-            Concours co,
-        	Competiteur c
-        WHERE NOT
-            EXISTS(
-            SELECT
-                1
-            FROM
-                Dessin d
-            WHERE
-                d.idCompetiteur = c.idCompetiteur AND d.idConcours = co.idConcours
-        )
-    );
+WITH liste_concours AS (
+    SELECT idConcours FROM Concours
+),
+participe_a_tous_concours as (
+    SELECT idCompetiteur FROM Dessin
+    WHERE idConcours IN (SELECT idConcours FROM liste_concours)
+    GROUP BY idCompetiteur
+    HAVING COUNT(DISTINCT idConcours) = (SELECT COUNT(*) FROM liste_concours)
+)
+SELECT idCompetiteur FROM participe_a_tous_concours;
