@@ -1,5 +1,5 @@
 <?php 
-    $servername = 'localhost";
+    $servername = "localhost";
     $db_name = "concours_dessins";
     $username = "user";
     $password = "userpass";
