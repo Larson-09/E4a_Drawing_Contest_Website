@@ -4,4 +4,9 @@
 
     require_once('../../libs/db_connect.php');
     $db = db_connect();
+
+    $req = "select * from dessin"
+    $res->query($req);
+
+    echo $res
 ?>
