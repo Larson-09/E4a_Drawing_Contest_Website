@@ -1,31 +1,37 @@
-<?php
-?>
-
+<?php 
+ ?>
 <!DOCTYPE HTML>
 <html>
 
 <head>
-    <title>Accueil</title>
+<link rel="stylesheet" href="../front_ressources/style.css"> 
+    <title>page de requetes</title>
 </head>
 <body>
 
     <h1>Requêtes</h1>
 
-    <p>
+    <p id= "accroche">
         Bienvenue sur notre site de concours de dessin administrateur ! <br>
         Les liens suivants présentent les résultats des requêtes SQL que nous avons développées <br>
     </p>
 
     <ul>
-        <li><a href="request_pages/r1.php">R1 : Afficher les compétiteurs ayant participé à un concours en 2021</a></li>
-        <li><a href="r2.php">R3 : Affiche les informations de tous les dessins ayant été évalués</a></li>
-        <li><a href="r3.php">R2 : Affiche le classement des dessins de 2022</a></li>
-        <li><a href="r4.php">R4 : Affiche les compétiteurs ayant participé à tous les concours</a></li>
-        <li><a href="r5.php">R5 : Affiche le nom et la moyenne de la meilleure région</a></li>
-        <li><a href="r6.php">R6 : Affiche la liste des dessins par ordre décroissant de note</a></li>
-        <li><a href="r7.php">R7 : Affiche le nombre de dessin publié par chaque club dans son histoire</a></li>
-        <li><a href="r8.php">R8 : Affiche le classement d'un concours donné</a></li>
+        <button class="bouton" id= "boutonN1" onclick="window.location.href = 'request_pages/r1.php';"role="button"> <span class="text">Requete N1</span></button>
+        <h3>
+            cette requete est ici pour "la je sais pas"
+        <h3>
+        <button class="bouton" id= "boutonN1" onclick="window.location.href = 'request_pages/r2.php';"role="button"> <span class="text">Requete N2</span></button>
+        <button class="bouton" id= "boutonN1" onclick="window.location.href = 'request_pages/r3.php';"role="button"> <span class="text">Requete N3</span></button>
+        <button class="bouton" id= "boutonN1" onclick="window.location.href = 'request_pages/r4.php';"role="button"> <span class="text">Requete N4</span></button>
+        <button class="bouton" id= "boutonN1" onclick="window.location.href = 'request_pages/r5.php';"role="button"> <span class="text">Requete N5</span></button>
+        <button class="bouton" id= "boutonN1" onclick="window.location.href = 'request_pages/r6.php';"role="button"> <span class="text">Requete N6</span></button>
+        <button class="bouton" id= "boutonN1" onclick="window.location.href = 'request_pages/r7.php';" role="button"> <span class="text">Requete N7</span></button>
+        <button class="bouton" id= "boutonN1" onclick="window.location.href = 'request_pages/r8.php';" role="button"> <span class="text">Requete N8</span></button>
     </ul>
+    <h2>
+        <img src="../front_ressources/bob-ross-the-joy-of-painting.jpg" id="image">
+    </h2>
 </body>
 </html>
 

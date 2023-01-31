@@ -9,7 +9,6 @@
 
     function db_connect(){
         $h="mysql:host=".DB_HOST.";dbname=".DB_NAME;
-        echo $h;
         try
         {
             $db = new PDO($h, DB_USER, DB_PASS);
@@ -20,6 +19,26 @@
                 die('Erreur : ' . $e->getMessage());
         }
         return $db;
+    }
+
+        /**
+     * Execute la requête
+     * @param string $requete
+     *            requête SQL
+     * @param array() $params
+     *            parmètres de la requête
+     * @throws Exception si l'exécution renvoit une erreur SQL
+     * @return PDOStatement
+     */
+    function executerRequete($db, $requete, $params = null) {
+        $resultat = $db->prepare($requete);
+
+        if (! $resultat->execute($params)) {
+            $erreur = $resultat->errorInfo();
+            throw new SQLException( $erreur[0], $erreur[2], 'Erreur SQL : ' . $erreur[0] . ' ' . $erreur[1] . ' ' . $erreur[2]);
+        }
+
+        return $resultat;
     }
 
 ?>

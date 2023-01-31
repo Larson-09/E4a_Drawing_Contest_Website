@@ -12,5 +12,5 @@ JOIN Utilisateur u ON
     d.idCompetiteur = u.idUtilisateur
 JOIN Concours c ON
     d.idConcours = c.idConcours
-WHERE YEAR(c.dateDebut) = 2022
-ORDER BY e.note
+WHERE YEAR(c.dateDebut) = 2021
+ORDER BY e.note DESC

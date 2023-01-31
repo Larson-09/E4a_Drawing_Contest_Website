@@ -1,0 +1,14 @@
+td{
+    border: 1px solid #333;
+}
+
+th{
+    border: 2px solid #333; 
+    background-color: pink;
+}
+tr:nth-child(odd){
+    background-color: #72c953;
+}
+tr:nth-child(even){
+    background-color: #d7db5e;
+}
