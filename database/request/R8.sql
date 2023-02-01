@@ -11,7 +11,7 @@ FROM
     Evaluation Ev,
     Concours Conc
 WHERE
-    Conc.idConcours = $1
+    Conc.idConcours = id_concours
 AND Cl.idClub = U.idClub
 AND U.idUtilisateur = C.idCompetiteur
 AND C.idCompetiteur = D.idCompetiteur
