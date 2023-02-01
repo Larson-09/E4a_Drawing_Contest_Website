@@ -11,7 +11,12 @@ FROM
     Evaluation Ev,
     Concours Conc
 WHERE
-    Conc.idConcours = $1 AND Cl.idClub = U.idClub AND U.idUtilisateur = C.idCompetiteur AND C.idCompetiteur = D.idCompetiteur AND D.idConcours = Conc.idConcours AND D.idDessin = Ev.idDessin
+    Conc.idConcours = $1
+AND Cl.idClub = U.idClub
+AND U.idUtilisateur = C.idCompetiteur
+AND C.idCompetiteur = D.idCompetiteur
+AND D.idConcours = Conc.idConcours
+AND D.idDessin = Ev.idDessin
 GROUP BY
     C.idCompetiteur
 ORDER BY
