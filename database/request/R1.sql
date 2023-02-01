@@ -22,4 +22,6 @@ WHERE
 	AND
     U.idClub = Clu.idClub
     AND 
-    U.idUtilisateur = C.idCompetiteur;
+    U.idUtilisateur = C.idCompetiteur
+    AND
+    YEAR(Con.dateDebut) = 2021;
